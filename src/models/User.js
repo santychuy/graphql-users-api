@@ -1,7 +1,4 @@
 import { model, Schema } from 'mongoose';
-
-import { validateEmail } from '../helpers/validateEmail';
-
 const userSchema = new Schema({
   name: {
     type: String,
@@ -17,7 +14,10 @@ const userSchema = new Schema({
     unique: true,
     validate: {
       message: 'Este E-mail ya está registrado',
-      validator: validateEmail(v),
+      validator: function (v) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(v).toLowerCase());
+      },
     },
   },
 });

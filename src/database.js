@@ -5,6 +5,8 @@ import { connect } from 'mongoose';
     await connect('mongodb://localhost/graphql-users', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
     });
     console.log('Database connected!');
   } catch (e) {

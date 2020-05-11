@@ -1,7 +1,19 @@
-import { ping } from '../../controllers/example.controller';
+import {
+  seeUser,
+  seeUsers,
+  createUser,
+  deleteUser,
+  updateUser,
+} from '../../controllers/users.controller';
 
 export const resolvers = {
   Query: {
-    ping,
+    seeUsers,
+    seeUser,
+  },
+  Mutation: {
+    createUser,
+    deleteUser,
+    updateUser,
   },
 };
