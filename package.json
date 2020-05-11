@@ -1,0 +1,33 @@
+{
+  "name": "users-store",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/santychuy/graphql-users-api.git",
+  "author": "Santiago Carrasco <jsanticc@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "build": "babel src -d dist -s",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.9.6",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3",
+    "helmet": "^3.22.0",
+    "mongoose": "^5.9.13",
+    "morgan": "^1.10.0",
+    "rimraf": "^3.0.2",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.3"
+  }
+}
